@@ -7,6 +7,8 @@ import Homepage from "./routes/homepage/Homepage.jsx";
 import DashboardLayout from "./layouts/dashboardLayout/DashboardLayout.jsx";
 import Dashboard from "./routes/dashboard/Dashboard.jsx"
 import ChatPage from "./routes/chatPage/ChatPage.jsx";
+import SigninPage from "./routes/signinPage/SigninPage.jsx";
+import SignupPage from "./routes/signupPage/SignupPage.jsx";
 
 /*enabling client side routing using layout*/
 const router = createBrowserRouter([
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
+      },
+      {
+        path: "/sign-in/*",
+        element: <SigninPage />,
+      },
+      {
+        path: "/sign-up/*",
+        element: <SignupPage />
       },
       {
         element: <DashboardLayout />,
