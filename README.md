@@ -1,3 +1,3 @@
-# ai-chat-WebApp
+# Lama Dev AI Chat Bot App Starter Setup
 
-A chat web application developed using React 19, Mongo DB, Express and Google Gemini AI
+This template provides a minimal setup to get React 19 working in Vite with HMR and some ESLint rules.
