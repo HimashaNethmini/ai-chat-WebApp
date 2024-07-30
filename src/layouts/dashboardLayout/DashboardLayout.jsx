@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './dashboardLayout.css'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { useAuth } from '@clerk/clerk-react'
 
 const DashboardLayout = () => {
+
+  const { userId, isLoaded } = useAuth();
+  const navigate = useNavigate();
+
+  //loaded but no user id - redirect to sign in page
+  useEffect(() => {
+    if ( isLoaded && !userId ){
+        navigate("/sign-in");
+    }
+  }, [isLoaded, userId, navigate]);
+
+  if (!isLoaded) return "Loading...";
+  
   return (
     <div className='DashboardLayout'>
       <div className="menu">MENU</div>
