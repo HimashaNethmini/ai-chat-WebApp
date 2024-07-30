@@ -18,7 +18,7 @@ const RootLayout = () => {
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <div className="rootLayout">
         <header>
-          <Link to="/" className='logo'>
+          <Link to="/dashboard" className='logo'>
             <img src="/logo.png" alt="" />
             <span>LAMA AI</span>
           </Link>
