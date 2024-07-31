@@ -28,6 +28,8 @@ const Homepage = () => {
           </div>
           {/* ends here */}
           <img src="/bot.png" alt="" className='bot'/>
+          
+{/* chat bot wording animations */}
           <div className="chat">
             <img 
               src=
