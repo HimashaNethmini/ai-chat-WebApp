@@ -15,14 +15,19 @@
 
         h1 {
            font-size: 128px; 
-
+           background: linear-gradient(to right, #217bfe, #e55571);
+           background-clip: text;
+           -webkit-background-clip: text;
+           color: transparent;
         }
 
-        h2{}
-
-        h3{}
-
-        button {}
+        h3{
+            background-color: #217bfe;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
     }
 
     .right {
