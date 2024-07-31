@@ -17,7 +17,17 @@ const Homepage = () => {
       </div>
 
       {/* right side - homepage */}
-      <div className="right"></div>
+      <div className="right">
+        <div className="imgContainer">
+          {/* animated bg */}
+          <div className="bgContainer">
+            <div className="bg"></div>
+          </div>
+          {/* ends here */}
+          <img src="/bot.png" alt="" className='bot'/>
+        </div>
+
+      </div>
     </div>
   )
 }
