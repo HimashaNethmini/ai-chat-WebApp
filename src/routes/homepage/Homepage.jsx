@@ -11,7 +11,7 @@ const Homepage = () => {
         <h3>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </h3>
-        <button>Get Started</button>
+        <Link to="/dashboard">Get Started</Link>
       </div>
 
       {/* right side - homepage */}
