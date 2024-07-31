@@ -96,7 +96,7 @@
 
       .chat {
         position: absolute;
-        bottom: -20px;
+        bottom: -15px;
         right: -50px;
         display: flex;
         align-items: center;
