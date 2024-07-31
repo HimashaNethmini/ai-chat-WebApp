@@ -45,4 +45,11 @@
     .right {
         flex: 1;
     }
+
+    .orbital {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0.10;
+    }
 }
