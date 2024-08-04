@@ -73,6 +73,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+
+      {/* footer */}
       <div className="terms">
         <img src="/logo.png" alt="" />
         <div className="links">
