@@ -1,9 +1,9 @@
-import React from 'react'
+import './chatList.css'
 import { Link } from 'react-router-dom'
 
 const ChatList = () => {
   return (
-    <div className='ChatList'>
+    <div className='chatList'>
         <span className='title'>DASHBOARD</span>
         <Link to = "/dashboard">Create a new Chat</Link>
         <Link to = "/">Explore Chat A </Link>
