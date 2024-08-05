@@ -12,12 +12,6 @@ const ChatList = () => {
         <div className="list">
             <Link to="/"> My Chat List </Link>
             <Link to="/"> My Chat List </Link>
-            <Link to="/"> My Chat List </Link>
-            <Link to="/"> My Chat List </Link>
-            <Link to="/"> My Chat List </Link>
-            <Link to="/"> My Chat List </Link>
-            <Link to="/"> My Chat List </Link>
-            <Link to="/"> My Chat List </Link>
         </div>
         <hr />
         <div className="upgrade">
