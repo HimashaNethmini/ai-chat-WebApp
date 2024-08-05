@@ -1,4 +1,4 @@
-import React from 'react'
+import './dashboard.css'
 
 const Dashboard = () => {
   return (
@@ -27,6 +27,16 @@ const Dashboard = () => {
             <span>Need Code Help</span>
           </div>
         </div>
+      </div>
+
+      {/* chat form */}
+      <div className="formContainer">
+        <form>
+          <input type="text" placeholder='Start the chat here ....' />
+          <button>
+            <img src="/arrow.png" alt="" />
+          </button>
+        </form>
       </div>
     </div>
   )
