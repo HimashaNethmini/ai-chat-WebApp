@@ -25,6 +25,7 @@
             }
 
             h1 {
+              /* add colour effects to chat AI title */
                 font-size: 64px;
                 background: linear-gradient(to right, #217bfe, #e55571);
                 background-clip: text;
@@ -85,7 +86,7 @@
                 outline: none;
                 color: #ececec;
               }
-              
+
               button {
                 background-color: #605e68;
                 border-radius: 50%;
