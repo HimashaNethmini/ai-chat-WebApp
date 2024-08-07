@@ -1,9 +1,4 @@
-.newPrompt{
-    position: relative;
-    min-height: 100vh;
-}
-
-    .newForm {
+.newForm {
         width: 50%;
         position: fixed;
         bottom: 20px;
