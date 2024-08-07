@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import './chatPage.css'
 import { useEffect } from 'react'
+import NewPrompt from '../../components/newPrompt/NewPrompt'
 
 const ChatPage = () => {
 
@@ -23,6 +24,7 @@ const ChatPage = () => {
           <div className="message user">User</div>
           <div className="message">AI</div>
           <div className="message user">User</div>
+          <NewPrompt />
 
           {/* using ref hook */}
           <div ref = {endRef} />
