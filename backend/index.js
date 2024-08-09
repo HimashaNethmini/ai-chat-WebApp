@@ -13,8 +13,9 @@ const imagekit = new ImageKit({
 
 //endpoint
 app.get("/api/upload",(req,res)=>{
-    res.send("it works !")
-})
+    const result = imagekit.getAuthenticationParameters();
+    res.send(result);
+});
 
 app.listen(port, ()=>{
     console.log("App is running on", port)
