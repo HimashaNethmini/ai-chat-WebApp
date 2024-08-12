@@ -11,6 +11,7 @@ const authenticator = async () => {
             throw new Error(`Request failed with status ${response.status}: ${errorText}`);
         }
 
+        //if authenticated, send token and signature to upload images
         const data = await response.json();
         const { signature, expire, token } = data;
         return { signature, expire, token };
