@@ -28,6 +28,13 @@ const Upload = () => {
             publicKey={publicKey}
             authenticator={authenticator}
         >
+            {/* upload component */}
+            <IKUpload
+                fileName = "test-upload.png"
+                onError={onError}
+                onSuccess={onSuccess}>
+
+            </IKUpload>
 
         </IKContent>
     </div>
