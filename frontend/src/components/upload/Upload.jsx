@@ -1,3 +1,5 @@
+import { IKContext, IKImage, IKUpload } from 'imagekitio-react';
+
 const urlEndpoint = import.meta.env.VITE_IMAGE_KIT_ENDPOINT;
 const publicKey = import.meta.env.VITE_IMAGE_KIT_PUBLIC_KEY;
 
@@ -41,7 +43,7 @@ const Upload = () => {
 
   return (
     <div className="Upload">
-      <IKContent
+      <IKContext
         urlEndpoint={urlEndpoint}
         publicKey={publicKey}
         authenticator={authenticator}
@@ -55,7 +57,7 @@ const Upload = () => {
           onUploadProgress={onUploadProgress}
           onUploadStart={onUploadStart}
         ></IKUpload>
-      </IKContent>
+      </IKContext>
     </div>
   );
 };
