@@ -1,8 +1,16 @@
 import express from "express"
+import cors from "cors"
 import ImageKit from "imagekit";
 
 const port = process.env.PORT || 3000;
 const app = express();
+
+//use cors for origin
+app.use (
+    cors ({
+        origin: process.env.CLIENT_URL,
+    })
+)
 
 //mapping with the imagekit credentials
 const imagekit = new ImageKit({
