@@ -31,6 +31,7 @@ const Upload = (setImg) => {
 
   const onSuccess = (res) => {
     console.log("Success", res);
+    setImg((prev) => ({ ...prev, isLoading: false, dbData: res }))
   };
 
   const onUploadProgress = (progress) => {
@@ -39,7 +40,7 @@ const Upload = (setImg) => {
 
   const onUploadStart = (evt) => {
     console.log("Start", evt);
-    setImg(prev => ({ ...prev, isLoading: true }));
+    setImg((prev) => ({ ...prev, isLoading: true }));
   };
 
   return (
