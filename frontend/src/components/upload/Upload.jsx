@@ -25,6 +25,10 @@ const authenticator = async () => {
 };
 
 const Upload = (setImg) => {
+
+  //when user clicks on attachment img, it should runs the upload component
+  const IKUploadRef = useRef(null)
+
   const onError = (err) => {
     console.log("Error", err);
   };
@@ -58,7 +62,13 @@ const Upload = (setImg) => {
           useUniqueFileName={true}
           onUploadProgress={onUploadProgress}
           onUploadStart={onUploadStart}
-        ></IKUpload>
+          style={{display: "none"}}
+          ref={IKUploadRef}
+        >
+          <label>
+            <img src="/attachment.png" alt="" />
+          </label>
+        </IKUpload>
       </IKContext>
     </div>
   );
