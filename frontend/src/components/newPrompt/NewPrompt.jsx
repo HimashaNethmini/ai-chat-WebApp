@@ -1,3 +1,4 @@
+import { IKImage } from "imagekitio-react";
 import Upload from "../upload/Upload";
 import "./newPrompt.css";
 
@@ -11,6 +12,13 @@ const NewPrompt = () => {
 
   return (
     <>
+    {/* add new chat */}
+    {img.dbData?.filePath && (
+      <IKImage
+        urlEndpoint={import.meta.env.VITE_IMAGE_KIT_ENDPOINT}
+        path={img.dbData?.filePath}
+      />
+    )}
       {/* attaching images and in the chat */}
       <form className="newForm">
         <Upload setImg={setImg}/>
