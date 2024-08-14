@@ -24,7 +24,7 @@ const authenticator = async () => {
   }
 };
 
-const Upload = () => {
+const Upload = (setImg) => {
   const onError = (err) => {
     console.log("Error", err);
   };
@@ -39,6 +39,7 @@ const Upload = () => {
 
   const onUploadStart = (evt) => {
     console.log("Start", evt);
+    setImg(prev => ({ ...prev, isLoading: true }));
   };
 
   return (
