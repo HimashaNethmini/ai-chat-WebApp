@@ -20,6 +20,7 @@ const NewPrompt = () => {
         urlEndpoint={import.meta.env.VITE_IMAGE_KIT_ENDPOINT}
         path={img.dbData?.filePath}
         width="380"
+        transformation={{ width:380 }} // resize the image
       />
     )}
       {/* attaching images and in the chat */}
