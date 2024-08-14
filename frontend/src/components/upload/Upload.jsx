@@ -65,7 +65,8 @@ const Upload = (setImg) => {
           style={{display: "none"}}
           ref={IKUploadRef}
         >
-          <label>
+          {/* automatically run upload comp. */}
+          <label onClick={() => IKUploadRef.current.click()}>
             <img src="/attachment.png" alt="" />
           </label>
         </IKUpload>
