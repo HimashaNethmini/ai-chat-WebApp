@@ -1,6 +1,7 @@
 import { IKImage } from "imagekitio-react";
 import Upload from "../upload/Upload";
 import "./newPrompt.css";
+import { useEffect, useRef } from "react";
 
 const NewPrompt = () => {
 
@@ -8,7 +9,14 @@ const NewPrompt = () => {
     isLoading:false,
     error:"",
     dbData: {}
-  })
+  });
+
+  //scrolling effect
+  const endRef = useRef(null);
+
+  useEffect(() => {
+    endRef.current.scrollIntoView({ behavior: "smooth" })
+  }, []);
 
   return (
     <>
