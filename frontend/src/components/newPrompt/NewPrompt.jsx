@@ -13,11 +13,11 @@ const NewPrompt = () => {
   });
 
   //scrolling effect
-  const endRef = useRef(null);
+  // const endRef = useRef(null);
 
-  useEffect(() => {
-    endRef.current.scrollIntoView({ behavior: "smooth" })
-  }, []);
+  // useEffect(() => {
+  //   endRef.current.scrollIntoView({ behavior: "smooth" })
+  // }, []);
 
   //make the first request
   const add = async () => {

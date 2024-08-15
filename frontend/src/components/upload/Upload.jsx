@@ -1,5 +1,5 @@
-import { IKContext, IKImage, IKUpload } from 'imagekitio-react';
-import { useRef } from 'react';
+import { IKContext, IKImage, IKUpload } from "imagekitio-react";
+import { useRef } from "react";
 
 const urlEndpoint = import.meta.env.VITE_IMAGE_KIT_ENDPOINT;
 const publicKey = import.meta.env.VITE_IMAGE_KIT_PUBLIC_KEY;
@@ -26,9 +26,8 @@ const authenticator = async () => {
 };
 
 const Upload = (setImg) => {
-
   //when user clicks on attachment img, it should runs the upload component
-  const IKUploadRef = useRef(null)
+  const iKUploadRef = useRef(null);
 
   const onError = (err) => {
     console.log("Error", err);
@@ -36,7 +35,7 @@ const Upload = (setImg) => {
 
   const onSuccess = (res) => {
     console.log("Success", res);
-    setImg((prev) => ({ ...prev, isLoading: false, dbData: res }))
+    setImg((prev) => ({ ...prev, isLoading: false, dbData: res }));
   };
 
   const onUploadProgress = (progress) => {
@@ -63,14 +62,15 @@ const Upload = (setImg) => {
           useUniqueFileName={true}
           onUploadProgress={onUploadProgress}
           onUploadStart={onUploadStart}
-          style={{display: "none"}}
-          ref={IKUploadRef}
-        >
-          {/* automatically run upload comp. */}
-          <label onClick={() => IKUploadRef.current.click()}>
+          style={{ display: "none" }}
+          ref={iKUploadRef}
+        />
+        {/* automatically run upload comp. */}
+        {
+          <label onClick={() => iKUploadRef.current.click()}>
             <img src="/attachment.png" alt="" />
           </label>
-        </IKUpload>
+        }
       </IKContext>
     </div>
   );
