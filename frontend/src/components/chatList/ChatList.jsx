@@ -6,8 +6,8 @@ const ChatList = () => {
     <div className='chatList'>
         <span className='title'>DASHBOARD</span>
         <Link to = "/dashboard">Create a new Chat</Link>
-        <Link to = "/">Explore Chat A </Link>
-        <Link to = "/" >Content</Link>
+        <Link to = "/">Explore Chat AI </Link>
+        <Link to = "/" >Contact</Link>
         <hr />
         <div className="list">
             <Link to="/"> My Chat List </Link>
