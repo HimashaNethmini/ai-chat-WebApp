@@ -73,6 +73,7 @@ const NewPrompt = () => {
       {answer && <div className="message">{answer}</div>}
 
       {/* attaching images and in the chat */}
+      <div className="endChat" ref={endRef}></div>
       <form className="newForm" onSubmit={handleSubmit} ref={formRef}>
         <Upload setImg={setImg} />
         <input id="file" type="file" multiple={false} hidden />
