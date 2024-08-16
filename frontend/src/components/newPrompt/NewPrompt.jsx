@@ -7,6 +7,7 @@ import model from "../../lib/gemini";
 const NewPrompt = () => {
   //to dynamically chat with AI
   const [ question, setQuestions] = useState("");
+  const [ answer, setAnswer ] = useState("");
 
   const [img, setImg ] = useState({
     isLoading:false,
@@ -27,8 +28,7 @@ const NewPrompt = () => {
     
       const result = await model.generateContent(prompt);
       const response = await result.response;
-      const ans = response.text();
-      console.log(text);
+      setAnswer(response.text ())
     };
 
     //handle ai responses
