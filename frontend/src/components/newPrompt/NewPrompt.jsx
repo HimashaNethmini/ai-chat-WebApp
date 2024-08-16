@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import model from "../../lib/gemini";
 
 const NewPrompt = () => {
+  //to dynamically chat with AI
+  const [ question, setQuestions] = useState("");
 
   const [img, setImg ] = useState({
     isLoading:false,
@@ -20,14 +22,24 @@ const NewPrompt = () => {
   // }, []);
 
   //make the first request
-  const add = async () => {
-      const prompt = "Write a story about an AI and magic"
+  const add = async (text) => {
+      setQuestions(text)
     
       const result = await model.generateContent(prompt);
       const response = await result.response;
-      const text = response.text();
+      const ans = response.text();
       console.log(text);
     };
+
+    //handle ai responses
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+
+      const text = e.target.text.value;
+      if (!text) return;
+
+      add(text)
+    }
 
   return (
     <>
@@ -43,10 +55,10 @@ const NewPrompt = () => {
       />
     )}
       {/* attaching images and in the chat */}
-      <form className="newForm">
+      <form className="newForm" onSubmit={handleSubmit}>
         <Upload setImg={setImg}/>
         <input id="file" type="file" multiple={false} hidden />
-        <input type="text" placeholder="Ask anything ....... " />
+        <input type="text" name="text" placeholder="Ask anything ....... " />
         <button>
           <img src="/arrow.png" alt="" />
         </button>
