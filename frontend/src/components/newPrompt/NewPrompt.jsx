@@ -81,6 +81,7 @@ const NewPrompt = () => {
   const add = async (text, isInitial) => {
     if (!isInitial) setQuestions(text);
 
+    //using stream for faster interaction
     try {
       const result = await chat.sendMessageStream(
         Object.entries(img.aiData).length ? [img.aiData, text] : [text]
