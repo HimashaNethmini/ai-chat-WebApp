@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import ImageKit from "imagekit";
+import mongoose from "mongoose";
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -10,7 +11,19 @@ app.use (
     cors ({
         origin: process.env.CLIENT_URL,
     })
-)
+);
+
+//mongoose connection
+const connect = async ()=> {
+    try {
+        await mongoose.connect(process.env.MONGO_DB)
+        console.log("Connected to DB");
+    }
+    catch (err) {
+        console.log(err)
+    }
+
+}
 
 //mapping with the imagekit credentials
 const imagekit = new ImageKit({
