@@ -39,5 +39,6 @@ app.get("/api/upload",(req,res)=>{
 });
 
 app.listen(port, ()=>{
+    connect()
     console.log("App is running on", port)
 })
