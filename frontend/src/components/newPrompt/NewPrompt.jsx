@@ -17,13 +17,64 @@ const NewPrompt = () => {
     aiData: {},
   });
 
+  const chat = model.startChat({
+    history: [
+      data?.history.map(({ role, parts }) => ({
+        role,
+        parts: [{ text: parts[0].text }],
+      })),
+    ],
+    generationConfig: {
+      // maxOutputTokens: 100,
+    },
+  });
+
   //scrolling effect
   const endRef = useRef(null);
   const formRef = useRef(null);
 
   useEffect(() => {
     endRef.current.scrollIntoView({ behavior: "smooth" });
-  }, [data, question, answer, img.dbData]);
+  }, [ data, question, answer, img.dbData]);
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: () => {
+      return fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          question: question.length ? question : undefined,
+          answer,
+          img: img.dbData?.filePath || undefined,
+        }),
+      }).then((res) => res.json());
+    },
+    onSuccess: () => {
+      queryClient
+        .invalidateQueries({ queryKey: ["chat", data._id] })
+        .then(() => {
+          formRef.current.reset();
+          setQuestions("");
+          setAnswer("");
+          //reset the image after sending it
+          setImg({
+            isLoading: false,
+            error: "",
+            dbData: {},
+            aiData: {},
+          });
+        });
+    },
+    onError: (err) => {
+      console.log(err);
+    },
+  });
+
 
   //make the first request
   const add = async (text, isInitial) => {
@@ -56,6 +107,18 @@ const NewPrompt = () => {
 
     add(text, false);
   };
+
+    // IN PRODUCTION WE DON'T NEED IT
+    const hasRun = useRef(false);
+
+    useEffect(() => {
+      if (!hasRun.current) {
+        if (data?.history?.length === 1) {
+          add(data.history[0].parts[0].text, true);
+        }
+      }
+      hasRun.current = true;
+    }, []);
 
   return (
     <>
