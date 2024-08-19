@@ -17,6 +17,7 @@ const NewPrompt = () => {
     aiData: {},
   });
 
+  //model providing answers in a conversational style
   const chat = model.startChat({
     history: [
       data?.history.map(({ role, parts }) => ({
