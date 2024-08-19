@@ -32,10 +32,16 @@ const imagekit = new ImageKit({
     privateKey: process.env.IMAGE_KIT_PRIVATE_KEY,
 })
 
-//endpoint
+//endpoint for upload
 app.get("/api/upload",(req,res)=>{
     const result = imagekit.getAuthenticationParameters();
     res.send(result);
+});
+
+//endpoint for chats
+app.post("api/chats", (req, res) => {
+    const {text} = req.body
+    console.log(text)
 });
 
 app.listen(port, ()=>{
