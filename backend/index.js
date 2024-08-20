@@ -76,6 +76,7 @@ app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
   
         await newUserChats.save();
       } else {
+        
         // IF EXISTS, PUSH THE CHAT TO THE EXISTING ARRAY
         await UserChats.updateOne(
           { userId: userId },
