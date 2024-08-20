@@ -3,7 +3,8 @@ import Upload from "../upload/Upload";
 import "./newPrompt.css";
 import { useEffect, useRef, useState } from "react";
 import model from "../../lib/gemini";
-import markdown from "react-markdown";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import Markdown from "react-markdown";
 
 const NewPrompt = () => {
   //to dynamically chat with AI
@@ -138,7 +139,7 @@ const NewPrompt = () => {
       {question && <div className="message user"> {question} </div>}
       {answer && (
         <div className="message">
-          <markdown>{answer}</markdown>
+          <Markdown>{answer}</Markdown>
         </div>
       )}
 
