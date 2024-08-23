@@ -1,6 +1,5 @@
 import express from "express"
 import cors from "cors"
-import path from "path"
 import ImageKit from "imagekit";
 import mongoose from "mongoose";
 import Chat from "./models/chat.js";
@@ -79,6 +78,7 @@ app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
         
         // IF EXISTS, PUSH THE CHAT TO THE EXISTING ARRAY
         await UserChats.updateOne(
+          //find the specific chat, and update it
           { userId: userId },
           {
             $push: {
