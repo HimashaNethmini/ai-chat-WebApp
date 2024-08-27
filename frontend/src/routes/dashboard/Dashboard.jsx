@@ -1,6 +1,9 @@
 import './dashboard.css'
+import { useAuth } from "@clerk/clerk-react";
 
 const Dashboard = () => {
+
+  const { userId } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,7 +15,7 @@ const Dashboard = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text }),
+      body: JSON.stringify({ userId, text }),
     });
   };
 
