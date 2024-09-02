@@ -28,6 +28,7 @@ const ChatPage = () => {
     <div className="ChatPage">
       <div className="wrapper">
         <div className="chat">
+          {/* mapping the chats */}
           {isPending
             ? "Loading..."
             : error

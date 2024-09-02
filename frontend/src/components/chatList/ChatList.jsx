@@ -1,6 +1,6 @@
-import { useQuery } from '@tanstack/react-query'
-import './chatList.css'
-import { Link } from 'react-router-dom'
+import { useQuery } from "@tanstack/react-query";
+import "./chatList.css";
+import { Link } from "react-router-dom";
 
 //using rendering userchats
 const ChatList = () => {
@@ -13,24 +13,24 @@ const ChatList = () => {
   });
 
   return (
-    <div className='chatList'>
-      <span className='title'>DASHBOARD</span>
+    <div className="chatList">
+      <span className="title">DASHBOARD</span>
       <Link to="/dashboard">Create a new Chat</Link>
       <Link to="/">Explore Chat AI </Link>
-      <Link to="/" >Contact</Link>
+      <Link to="/">Contact</Link>
       <hr />
-      <span className='title'>RECENT CHATS</span>
+      <span className="title">RECENT CHATS</span>
       <div className="list">
         {/* mapping the chats */}
-        {isPending 
-          ? "Loading ..." 
-          : error 
+        {isPending
+          ? "Loading ..."
+          : error
           ? "Something went wrong"
-          : data ?.map((chat) => (
-            <Link to={`/dashboard/chats/${chat._id}`} key={chat._id}>
-              {chat.title}
-            </Link>
-          ))}
+          : data?.map((chat) => (
+              <Link to={`/dashboard/chats/${chat._id}`} key={chat._id}>
+                {chat.title}
+              </Link>
+            ))}
       </div>
       <hr />
       <div className="upgrade">
@@ -41,7 +41,7 @@ const ChatList = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ChatList
+export default ChatList;
