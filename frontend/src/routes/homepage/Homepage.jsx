@@ -6,6 +6,13 @@ import { useState } from 'react';
 const Homepage = () => {
   const [typingStatus, setTypingStatus] = useState("human1");
 
+  //taking credentials to homepage
+  const test = async () => {
+    await fetch ("http://localhost:3000/api/test", {
+      credentials: "include",
+    });
+  };
+
   return (
     <div className='homepage'>
       <img src="/orbital.png" alt="" className='orbital'/>
