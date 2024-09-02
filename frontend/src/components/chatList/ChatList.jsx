@@ -1,7 +1,17 @@
+import { useQuery } from '@tanstack/react-query'
 import './chatList.css'
 import { Link } from 'react-router-dom'
 
-const ChatList = () => {
+  //using rendering userchats
+  const ChatList = () => {
+    const { isPending, error, data } = useQuery({
+      queryKey: ["userChats"],
+      queryFn: () =>
+        fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
+          credentials: "include",
+        }).then((res) => res.json()),
+    });
+
   return (
     <div className='chatList'>
         <span className='title'>DASHBOARD</span>
@@ -9,6 +19,7 @@ const ChatList = () => {
         <Link to = "/">Explore Chat AI </Link>
         <Link to = "/" >Contact</Link>
         <hr />
+        <span className='title'>RECENT CHATS</span>
         <div className="list">
             <Link to="/"> My Chat List </Link>
             <Link to="/"> My Chat List </Link>
