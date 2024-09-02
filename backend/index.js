@@ -154,6 +154,7 @@ app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
     }
   });
   
+  //not authenticated, show error
   app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(401).send("Unauthenticated!");
