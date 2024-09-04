@@ -5,6 +5,14 @@ const Dashboard = () => {
 
   const { userId } = useAuth();
 
+  //refetch dashboard items
+  const mutation = useMutation({
+    mutationFn: postTodo,
+    onSuccess: () =>{
+      queryClient.invalidateQueries({ queryKey: ['todos'] })
+    }
+  })
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const text = e.target.text.value
