@@ -6,7 +6,7 @@ import model from "../../lib/gemini";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Markdown from "react-markdown";
 
-const NewPrompt = () => {
+const NewPrompt = ({data}) => {
   //to dynamically chat with AI
   const [question, setQuestions] = useState("");
   const [answer, setAnswer] = useState("");
