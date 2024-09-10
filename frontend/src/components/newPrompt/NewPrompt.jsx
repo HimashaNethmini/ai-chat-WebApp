@@ -42,6 +42,7 @@ const NewPrompt = ({data}) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
+    //update data in db
     mutationFn: () => {
       return fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
         method: "PUT",
